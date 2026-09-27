@@ -1,5 +1,0 @@
-home = C:\Users\DELL\AppData\Local\Programs\Python\Python313
-include-system-site-packages = false
-version = 3.13.7
-executable = C:\Users\DELL\AppData\Local\Programs\Python\Python313\python.exe
-command = C:\Users\DELL\AppData\Local\Programs\Python\Python313\python.exe -m venv C:\Users\DELL\Desktop\ComicCraftAI\.venv
