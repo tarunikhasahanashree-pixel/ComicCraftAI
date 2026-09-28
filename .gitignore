@@ -1,5 +1,0 @@
-.env
-_pycache_/
-*.pyc
-static/exports/*
-static/panels/*
