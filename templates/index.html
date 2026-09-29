@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComicCraft - Create Your AI Comic</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="brand">
+      <h1>🎨 ComicCraft</h1>
+      <p>Turn a simple idea into a personalized, illustrated comic strip.</p>
+    </div>
+
+    <div class="card">
+      <form action="/generate" method="post">
+        <label for="story_prompt">Story Prompt</label>
+        <textarea id="story_prompt" name="story_prompt" placeholder="A brave fox exploring an enchanted forest..." required></textarea>
+
+        <label for="character_name">Main Character Name</label>
+        <input type="text" id="character_name" name="character_name" placeholder="Finn" required>
+
+        <label for="setting">Setting</label>
+        <select id="setting" name="setting" required>
+          <option value="forest">Forest</option>
+          <option value="school">School</option>
+          <option value="space">Space</option>
+          <option value="city">City</option>
+        </select>
+
+        <label for="tone">Story Tone</label>
+        <select id="tone" name="tone" required>
+          <option value="light-hearted">Light-hearted</option>
+          <option value="dramatic">Dramatic</option>
+          <option value="poetic">Poetic</option>
+          <option value="funny">Funny</option>
+        </select>
+
+        <label for="art_style">Art Style</label>
+        <select id="art_style" name="art_style" required>
+          <option value="anime">Anime</option>
+          <option value="pixel art">Pixel Art</option>
+          <option value="comic book">Comic Book</option>
+          <option value="realistic">Realistic</option>
+        </select>
+
+        <div class="center">
+          <button type="submit">✨ Generate My Comic</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

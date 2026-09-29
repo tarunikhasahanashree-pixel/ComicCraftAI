@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ComicCraft - Your Comic</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+  <div class="page">
+    <div class="brand">
+      <h1>📖 {{ character_name }}'s Comic</h1>
+      <p>Here's your AI-generated comic strip, panel by panel.</p>
+    </div>
+
+    {% for panel in layout %}
+    <div class="panel">
+      <h2>Panel {{ panel.panel_number }}: {{ panel.title.split(': ', 1)[-1] if ': ' in panel.title else panel.title }}</h2>
+      {% if panel.image_path %}
+      <img src="/static/{{ panel.image_path }}" alt="Panel {{ panel.panel_number }} illustration">
+      {% endif %}
+      <p class="scene-description">{{ panel.scene_description }}</p>
+      {% if panel.caption %}
+      <p class="caption">{{ panel.caption }}</p>
+      {% endif %}
+      {% if panel.narration %}
+      <p class="narration">{{ panel.narration }}</p>
+      {% endif %}
+      <p class="image-prompt">Image prompt: {{ panel.image_prompt }}</p>
+    </div>
+    {% endfor %}
+
+    <div class="center">
+      <a class="btn" href="/download?path={{ pdf_path }}" onclick="setTimeout(function(){ window.location.href='/export-success'; }, 600);">
+        ⬇ Download Your Comic as PDF
+      </a>
+    </div>
+  </div>
+</body>
+</html>
